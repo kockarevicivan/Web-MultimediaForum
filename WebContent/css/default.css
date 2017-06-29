@@ -17,7 +17,8 @@ header {
 header>.centerHelper>.headerLogo {
 	display: inline-block;
 	color: #fff;
-	text-decoration: none; height : 60px;
+	text-decoration: none;
+	height: 60px;
 	line-height: 60px;
 	margin-right: 20px;
 	height: 60px;
@@ -155,7 +156,7 @@ main>.mainItem>.forumInfoWrapper>span {
 	font-size: 14px;
 }
 
-main>.mainItem>.fa-times {
+main>.mainItem>a.times {
 	position: absolute;
 	right: 30px;
 	font-size: 20px;
@@ -163,7 +164,7 @@ main>.mainItem>.fa-times {
 	color: #595959;
 }
 
-main>.mainItem>.fa-eye {
+main>.mainItem>a.eye {
 	position: absolute;
 	right: 60px;
 	font-size: 20px;
@@ -192,10 +193,26 @@ aside>.notificationWrapper>.notificationItem {
 	background-color: #ECF0F1;
 }
 
-aside>.notificationWrapper>.notificationItem:not (:last-child ){
-	margin-bottom: 10px;
-}
+aside
+>
+.notificationWrapper
+>
+.notificationItem
+:not
+ 
+(
+:last-child
+ 
+){
+margin-bottom
+:
+ 
+10
+px
+;
 
+
+}
 aside>.notificationWrapper>.notificationItem>i {
 	color: #48a5e2;
 }
@@ -262,5 +279,104 @@ input[type="text"], input[type="password"] {
 	right: 0;
 	left: auto;
 	width: 3px;
-	background-color: #48a5e2;	
+	background-color: #48a5e2;
 }
+
+.topicHeaderWrapper {
+	display: block;
+	background: #ECF0F1;
+	padding: 20px;
+	margin-bottom: 20px;
+}
+
+.topicHeaderWrapper>img {
+	display: inline-block;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	vertical-align: top;
+	margin-right: 20px;
+}
+
+.topicHeaderWrapper>div {
+	display: inline-block;
+	vertical-align: top;
+	width: calc(100% - 110px);
+}
+
+.topicHeaderWrapper>div>h3 {
+	margin-bottom: 10px;
+}
+
+.topicHeaderWrapper>div>p {
+	text-align: justify;
+}
+
+.topicHeaderWrapper>div>h5 {
+	margin-top: 10px;
+	color: #595959;
+}
+
+.commentInputWrapper {
+	position: relative;
+	border: 1px solid #d3dcde;
+	overflow: hidden;
+	margin-top: 10px;
+}
+
+.commentInputWrapper>textarea {
+	display: block;
+	width: 100% !important;
+	height: 36px;
+	line-height: 36px;
+	border: none;
+	padding: 0 46px 0 10px;
+}
+
+.commentInputWrapper>button {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: auto;
+	right: 0;
+	height: 36px;
+	width: 36px;
+	border: none;
+	border-left: 1px solid #d3dcde;
+	cursor: pointer;
+}
+
+.comment > .commentContent{
+	background: #ECF0F1;
+	margin-bottom: 10px;
+	padding: 20px;
+}
+
+.comment > .commentContent > img{
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	vertical-align: top;
+	margin-right: 20px;
+}
+
+.comment > .commentContent > div{
+	display: inline-block;
+	width: calc(100% - 90px);
+}
+
+.comment > .commentContent > .commentInputWrapper {
+	display: none;
+}
+
+.subcommentsWrapper{
+	margin-left: 30px;
+}
+
+
+
+
+
+
+
+

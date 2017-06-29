@@ -12,6 +12,9 @@ public class Topic {
 	public int type;
 	public User author;
 	public String content;
+	public String imagePath;
+	public String linkUrl;
+	public String linkContent;
 	public Date dateCreated;
 	
 	@JsonIgnore

@@ -23,6 +23,25 @@ public class LoginServlet extends HttpServlet {
 		db = Database.getInstance();
 	}
 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		ServletContext servletContext = request.getServletContext(); 
+		servletContext.setAttribute("LoginValidationMessage", null);
+		servletContext.setAttribute("RedirectedFrom", null);
+
+		User found = (User)request.getSession().getAttribute("CurrentUser");
+		///TODO make checks if user is loggedIn.
+		
+		if(found == null) {
+			request.getRequestDispatcher("account.jsp").forward(request, response);
+		} else {
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		}
+		
+		return;
+	}
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// Reset JSP validation indicators.

@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$('.grayTrack > .centerHelper > a').on('click', function(){
+	$(document).on('click', '.grayTrack > .centerHelper > a', function(){
 		$('.grayTrack > .centerHelper > a').removeClass('active');
 		$(this).addClass('active');
 		

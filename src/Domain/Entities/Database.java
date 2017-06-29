@@ -10,9 +10,13 @@ public class Database {
 	private static Database instance;
 	
 	public ArrayList<User> users;
+	public ArrayList<Subforum> subforums;
+	public ArrayList<Topic> topics;
 	
 	private Database() {
 		users = new ArrayList<User>();
+		subforums = new ArrayList<Subforum>();
+		topics = new ArrayList<Topic>();
 		
 		User temp = new User();
 		temp.id = UUID.randomUUID().toString();
@@ -50,6 +54,7 @@ public class Database {
 		t.userLikes = new ArrayList<User>();
 		temp.savedTopics = new ArrayList<Topic>();
 		temp.savedTopics.add(t);
+		topics.add(t);
 
 		Comment c = new Comment();
 		c.id = UUID.randomUUID().toString();

@@ -1,0 +1,29 @@
+<!--region GrayTrack-->
+<div class="grayTrack jumbojet"></div>
+<!--endregion-->
+
+<!--region Main-->
+<div class="centerHelper padding20 boxSizing">
+	
+	<main style="display: inline-block;" >
+		<div class="topicHeaderWrapper">
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPy_ad7TAx5crjifhMXj9W6CR-R7VJdIHz2qz2NG6lCo0CW95fmQ" />
+			<div>
+				<h3><a href="#">Subforum</a> - {{ data.topicName }}</h3>
+				<p>{{ data.topicContent }}</p>
+				<h5><i>#{{ data.author }} - {{ data.dateCreated | date }}.</i></h5>
+				
+				<div class="commentInputWrapper">
+					<textarea class="boxSizing" type="text" placeholder="Write a comment..." ></textarea>
+					<button><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+				</div>
+			</div>
+		</div>
+		
+		<comment ng-repeat="comment in data.comments" comment="comment"></comment>
+		
+	</main>
+	
+	<div ng-include src="'/WebProjekat/scripts/angular/views/components/sidebar.html'"></div>
+</div>
+<!--endregion-->
