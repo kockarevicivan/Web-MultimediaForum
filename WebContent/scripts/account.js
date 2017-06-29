@@ -8,13 +8,13 @@ $(document).ready(function() {
 	});
 	
 	$('#loginForm').on('submit', function(e) {
-		if(!validateLogin()){}
-			//e.preventDefault();
+		if(!validateLogin())
+			e.preventDefault();
 	});
 	
 	$('#registerForm').on('submit', function(e) {
-		if(!validateRegister()){}
-			//e.preventDefault();
+		if(!validateRegister())
+			e.preventDefault();
 	});
 });
 
@@ -34,15 +34,15 @@ function validateLogin() {
 	
 	if(!$('#usernameLogin').val().length) {
 		valid = false;
-		message = 'Username polje prazno!';
+		message = 'Username is mandatory!';
 	}
 	else if(!$('#passwordLogin').val().length) {
 		valid = false;
-		message = 'Lozinka polje prazno!';
+		message = 'Password is mandatory!';
 	}
 	
 	if(message.length)
-		indicateValidationError(message);
+		indicateLoginValidationError(message);
 	
 	return valid;
 }
@@ -53,39 +53,43 @@ function validateRegister() {
 
 	if(!$('#firstNameRegister').val().length) {
 		valid = false;
-		message = 'Ime polje prazno!';
+		message = 'First name is mandatory!';
 	}
 	else if(!$('#lastNameRegister').val().length) {
 		valid = false;
-		message = 'Prezime polje prazno!';
+		message = 'Last name is mandatory!';
 	}
 	else if(!$('#usernameRegister').val().length) {
 		valid = false;
-		message = 'Username polje prazno!';
+		message = 'Username is mandatory!';
 	}
 	else if(!$('#emailRegister').val().length) {
 		valid = false;
-		message = 'Email polje prazno!';
+		message = 'Email is mandatory!';
 	}
 	else if(!$('#passwordRegister').val().length) {
 		valid = false;
-		message = 'Lozinka polje prazno!';
+		message = 'Password is mandatory!';
 	}
 	else if(!$('#repeatPasswordRegister').val().length) {
 		valid = false;
-		message = 'Ponovi lozinku polje prazno!';
+		message = 'Password repeat is mandatory!';
 	}
 	else if($('#passwordRegister').val() != $('#repeatPasswordRegister').val()) {
 		valid = false;
-		message = 'Lozinke se ne poklapaju!';
+		message = 'Passwords don\'t match!';
 	}
 	
 	if(message.length)
-		indicateValidationError(message);
+		indicateRegisterValidationError(message);
 	
 	return valid;
 }
 
-function indicateValidationError(message) {
-	alert(message);
+function indicateLoginValidationError(message) {
+	$('#loginForm .validationSummary').html(message);
+}
+
+function indicateRegisterValidationError(message) {
+	$('#registerForm .validationSummary').html(message);
 }

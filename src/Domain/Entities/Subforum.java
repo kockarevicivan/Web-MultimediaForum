@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Subforum {
-	
+	public String id;
 	public String name;
 	public String description;
 	public String iconPath;

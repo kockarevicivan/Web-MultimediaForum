@@ -6,6 +6,7 @@ import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Topic {
+	public String id;
 	public Subforum subforum;
 	public String name;
 	public int type;

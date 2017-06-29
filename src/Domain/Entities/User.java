@@ -6,7 +6,9 @@ import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class User {
+	public String id;
 	public String username;
+	@JsonIgnore
 	public String password;
 	public String firstName;
 	public String lastName;
@@ -21,4 +23,6 @@ public class User {
 	public ArrayList<Topic> savedTopics;
 	@JsonIgnore
 	public ArrayList<Comment> savedComments;
+	@JsonIgnore
+	public ArrayList<Message> messages;
 }

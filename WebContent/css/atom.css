@@ -1,0 +1,152 @@
+/*
+Resets padding and margin for every element.
+
+REQ: No requirements.
+*/
+*{
+	padding: 0;
+	margin: 0;
+}
+
+/*
+Forces the element to calculate border and padding in overall width.
+
+REQ: No requirements.
+*/
+.boxSizing{
+	-moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+
+/*
+Gives thematic shadow to box elements.
+
+REQ: No requirements.
+*/
+.boxShadow{
+    -webkit-box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.3);
+    box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.3);
+}
+
+/*
+Makes brick elements suited for sections in flat design.
+
+REQ: No requirements.
+*/
+.jumbojet{
+	position: relative;
+	display: block;
+	width: 100%;
+	overflow: hidden;
+}
+
+/*
+Used to split parent div in two divs.
+
+REQ: No requirements
+*/
+.left,.right{
+	position: relative;
+	display: inline-block;
+	width: 50%;
+	height: 100%;
+}
+
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
+
+/*
+Used to fill absolute divs with relative divs, because of the influence on child elements.
+
+REQ: No requirements. 
+*/
+.relativeHack{
+	position: relative;
+	display: block;
+	height: 100%;
+	width: 100%;
+}
+
+/*
+Used to limit design of the page in center of the screen.
+
+REQ: No requirements.
+*/
+.centerHelper{
+	position: relative;
+	display: block;
+	width: 100%;
+	max-width: 1200px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+/*
+Centers the element horizontally.
+
+REQ: Position of an element must be defined.
+*/
+.horizontalCenter{
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+/*
+Centers the element vertically.
+
+REQ: Position of an element must be defined.
+*/
+.verticalCenter{
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+/*
+Fully centers the element.
+
+REQ: Position of an element must be defined.
+*/
+.fullCenter{
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+/*
+Used to create padding on the left and right side of an element. Mostly used for direct body children.
+
+REQ: If an element doesn't have .boxSizing class assigned to it, element will go out of the borders.
+*/
+.padding20{
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+/*
+Mostly used to create dialogs.
+
+REQ: Mainly used as bodys first child.
+*/
+.fader{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.5)
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+    opacity: 1;
+    cursor: pointer;
+    color: red;
+    /*TODO mora se uraditi i za chrome*/
+}

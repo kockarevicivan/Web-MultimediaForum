@@ -1,0 +1,54 @@
+@font-face {
+	src: url('../fonts/TitilliumWeb-Black.ttf');
+	font-family: 'TitilliumWeb-Black';
+}
+
+@font-face {
+	src: url('../fonts/TitilliumWeb-Bold.ttf');
+	font-family: 'TitilliumWeb-Bold';
+}
+
+@font-face {
+	src: url('../../fonts/TitilliumWeb-BoldItalic.ttf');
+	font-family: 'TitilliumWeb-BoldItalic';
+}
+
+@font-face {
+	src: url('../fonts/TitilliumWeb-ExtraLight.ttf');
+	font-family: 'TitilliumWeb-ExtraLight';
+}
+
+@font-face {
+	src: url('../fonts/TitilliumWeb-ExtraLightItalic.ttf');
+	font-family: 'TitilliumWeb-ExtraLightItalic';
+}
+
+@font-face {
+	src: url('../fonts/TitilliumWeb-Italic.ttf');
+	font-family: 'TitilliumWeb-Italic';
+}
+
+@font-face {
+	src: url('../fonts/TitilliumWeb-Light.ttf');
+	font-family: 'TitilliumWeb-Light';
+}
+
+@font-face {
+	src: url('../fonts/TitilliumWeb-LightItalic.ttf');
+	font-family: 'TitilliumWeb-LightItalic';
+}
+
+@font-face {
+	src: url('../fonts/TitilliumWeb-Regular.ttf');
+	font-family: 'TitilliumWeb-Regular';
+}
+
+@font-face {
+	src: url('../TitilliumWeb-SemiBold.ttf');
+	font-family: 'TitilliumWeb-SemiBold';
+}
+
+@font-face {
+	src: url('../fonts/TitilliumWeb-SemiBoldItalic.ttf');
+	font-family: 'TitilliumWeb-SemiBoldItalic';
+}

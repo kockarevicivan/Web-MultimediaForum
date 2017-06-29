@@ -6,6 +6,7 @@ import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class Comment {
+	public String id;
 	public Topic topic;
 	public User author;
 	public Date dateCreated;

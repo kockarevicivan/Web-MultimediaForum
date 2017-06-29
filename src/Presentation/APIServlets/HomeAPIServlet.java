@@ -37,6 +37,7 @@ public class HomeAPIServlet extends HttpServlet {
 		responseModel.followedSubforums = current.followedSubforums;
 		responseModel.savedTopics = current.savedTopics;
 		responseModel.savedComments = current.savedComments;
+		responseModel.messages = current.messages;
 		
 		String jsonContent = new SerializationHelper<HomeServiceResponseModel>().serialize(responseModel);
 		
