@@ -27,11 +27,15 @@
 		<script src="scripts/angular/services/topicService.js"></script>
 		<script src="scripts/angular/services/subforumService.js"></script>
 		<script src="scripts/angular/services/sidebarService.js"></script>
+		<script src="scripts/angular/services/messageService.js"></script>
+		<script src="scripts/angular/services/profileService.js"></script>
 
 		<script src="scripts/angular/controllers/homeController.js"></script>
 		<script src="scripts/angular/controllers/topicController.js"></script>
 		<script src="scripts/angular/controllers/subforumController.js"></script>
 		<script src="scripts/angular/controllers/sidebarController.js"></script>
+		<script src="scripts/angular/controllers/messageController.js"></script>
+		<script src="scripts/angular/controllers/profileController.js"></script>
 	</head>
 	<body ng-app="webForumApp">
 		<!--region Header-->
@@ -45,8 +49,11 @@
 				<span class="headerMenu" href="javascript:;">
 					<%= current.username %> <i class="fa fa-sort-desc" aria-hidden="true"></i>
 					<ul>
+						<%if(current.role > 0) {%>
+							<li><a href="#"><i class="fa fa-plus" aria-hidden="true"></i>Create subforum</a></li>
+						<%} %>
 						<li><a ng-href="/WebProjekat/LoginServlet#/subforums"><i class="fa fa-comments" aria-hidden="true"></i>Subforums</a></li>
-						<li><a href="#"><i class="fa fa-user-o" aria-hidden="true"></i>Edit profile</a></li>
+						<li><a href="/WebProjekat/LoginServlet#/editProfile"><i class="fa fa-user-o" aria-hidden="true"></i>Edit profile</a></li>
 						<li><a href="/WebProjekat/SignoutServlet"><i class="fa fa-sign-out" aria-hidden="true"></i>Sign out</a></li>
 					</ul>
 				</span>

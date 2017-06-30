@@ -10,6 +10,10 @@ app.config(function ($routeProvider) {
       controller: "TopicController",
       templateUrl: "/WebProjekat/scripts/angular/views/topic.html"
     })
+    .when('/newTopic', {
+      controller: "ProfileController",
+      templateUrl: "/WebProjekat/scripts/angular/views/newTopic.html"
+    })
     .when('/subforum/:subforumId', {
       controller: "SubforumController",
       templateUrl: "/WebProjekat/scripts/angular/views/subforum.html"
@@ -17,6 +21,18 @@ app.config(function ($routeProvider) {
     .when('/subforums', {
       controller: "SubforumController",
       templateUrl: "/WebProjekat/scripts/angular/views/allSubforums.html"
+    })
+    .when('/message/:messageId', {
+      controller: "MessageController",
+      templateUrl: "/WebProjekat/scripts/angular/views/message.html"
+    })
+    .when('/newMessage', {
+      controller: "MessageController",
+      templateUrl: "/WebProjekat/scripts/angular/views/newMessage.html"
+    })
+    .when('/editProfile', {
+      controller: "ProfileController",
+      templateUrl: "/WebProjekat/scripts/angular/views/editProfile.html"
     })
     .otherwise({
       redirectTo: '/'

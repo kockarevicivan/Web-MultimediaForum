@@ -31,6 +31,7 @@ public class Database {
 		temp.dislikedComments = new ArrayList<Comment>();
 		temp.likedTopics = new ArrayList<Topic>();
 		temp.dislikedTopics = new ArrayList<Topic>();
+		temp.role = 2;
 		
 		Subforum sf = new Subforum();
 		sf.id = UUID.randomUUID().toString();

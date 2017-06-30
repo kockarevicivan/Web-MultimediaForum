@@ -61,7 +61,7 @@ public class RegisterServlet extends HttpServlet {
 				found.lastName = lastName;
 				found.username = username;
 				found.password = password;
-				found.role = 1;
+				found.role = 0;
 				found.telephoneNo = telephoneNo;
 				found.email = email;
 				found.dateRegistered = new Date();

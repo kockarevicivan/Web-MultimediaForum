@@ -1,0 +1,28 @@
+<!--region GrayTrack-->
+<div class="grayTrack jumbojet">
+	<div class="centerHelper padding20 boxSizing">
+		<a class="active blocked" href="javascript:;"><i class="fa fa-list-ul" aria-hidden="true"></i> Message</a>
+	</div>
+</div>
+<!--endregion-->
+
+<!--region Main-->
+<div class="centerHelper padding20 boxSizing">
+	
+	<main style="display: inline-block;" >
+		<div class="messageWrapper">
+			<div>
+				<h3>Message from <i> #{{ data.message.sender.username }}</i></h3>
+				<p>{{ data.message.content }}</p>
+				
+				<div class="commentInputWrapper">
+					<textarea class="boxSizing" type="text" placeholder="Send a message to {{ data.message.sender.username }}..." ></textarea>
+					<button><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+				</div>
+			</div>
+		</div>		
+	</main>
+	
+	<div ng-include src="'/WebProjekat/scripts/angular/views/components/sidebar.html'"></div>
+</div>
+<!--endregion-->
