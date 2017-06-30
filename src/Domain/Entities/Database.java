@@ -27,6 +27,10 @@ public class Database {
 		temp.password = SecurityHelper.getHash("0643843672");
 		temp.telephoneNo = "+38121 896 093";
 		temp.dateRegistered = new Date();
+		temp.likedComments = new ArrayList<Comment>();
+		temp.dislikedComments = new ArrayList<Comment>();
+		temp.likedTopics = new ArrayList<Topic>();
+		temp.dislikedTopics = new ArrayList<Topic>();
 		
 		Subforum sf = new Subforum();
 		sf.id = UUID.randomUUID().toString();
@@ -38,6 +42,7 @@ public class Database {
 		sf.responsibleModerator = temp;
 		sf.rules = new ArrayList<String>();
 		sf.rules.add("Please don't feed the owls.");
+		sf.topics = new ArrayList<Topic>();
 		temp.followedSubforums = new ArrayList<Subforum>();
 		temp.followedSubforums.add(sf);
 		
@@ -54,7 +59,10 @@ public class Database {
 		t.userLikes = new ArrayList<User>();
 		temp.savedTopics = new ArrayList<Topic>();
 		temp.savedTopics.add(t);
+		sf.topics.add(t);
 		topics.add(t);
+		temp.likedTopics.add(t);
+		temp.dislikedTopics.add(t);
 
 		Comment c = new Comment();
 		c.id = UUID.randomUUID().toString();
@@ -69,6 +77,8 @@ public class Database {
 		c.userLikes = new ArrayList<User>();
 		temp.savedComments = new ArrayList<Comment>();
 		temp.savedComments.add(c);
+		temp.likedComments.add(c);
+		temp.dislikedComments.add(c);
 		
 		Message msg = new Message();
 		msg.id = UUID.randomUUID().toString();
@@ -95,6 +105,7 @@ public class Database {
 		msg.isSeen = true;
 		temp.messages.add(msg);
 		
+		subforums.add(sf);
 		users.add(temp);
 	}
 	

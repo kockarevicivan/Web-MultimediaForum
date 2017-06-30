@@ -25,4 +25,12 @@ public class User {
 	public ArrayList<Comment> savedComments;
 	@JsonIgnore
 	public ArrayList<Message> messages;
+	@JsonIgnore
+	public ArrayList<Topic> likedTopics;
+	@JsonIgnore
+	public ArrayList<Topic> dislikedTopics;
+	@JsonIgnore
+	public ArrayList<Comment> likedComments;
+	@JsonIgnore
+	public ArrayList<Comment> dislikedComments;
 }

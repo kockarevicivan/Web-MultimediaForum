@@ -25,20 +25,31 @@
 
 		<script src="scripts/angular/services/homeService.js"></script>
 		<script src="scripts/angular/services/topicService.js"></script>
+		<script src="scripts/angular/services/subforumService.js"></script>
+		<script src="scripts/angular/services/sidebarService.js"></script>
 
 		<script src="scripts/angular/controllers/homeController.js"></script>
 		<script src="scripts/angular/controllers/topicController.js"></script>
+		<script src="scripts/angular/controllers/subforumController.js"></script>
+		<script src="scripts/angular/controllers/sidebarController.js"></script>
 	</head>
 	<body ng-app="webForumApp">
 		<!--region Header-->
 		<header class="jumbojet">
 			<div class="centerHelper padding20 boxSizing">
-				<a class="headerLogo" href="javascript:;"><span>Web</span>Forum</a>
+				<a class="headerLogo" ng-href="LoginServlet#/"><span>Web</span>Forum</a>
 				<form>
 					<input class="boxSizing" type="text" placeholder="Pretraga..." />
 					<button><i class="fa fa-search" aria-hidden="true"></i></button>
 				</form>
-				<a class="headerMenu" href="javascript:;"><%= current.username %> <i class="fa fa-sort-desc" aria-hidden="true"></i></a>
+				<span class="headerMenu" href="javascript:;">
+					<%= current.username %> <i class="fa fa-sort-desc" aria-hidden="true"></i>
+					<ul>
+						<li><a ng-href="/WebProjekat/LoginServlet#/subforums"><i class="fa fa-comments" aria-hidden="true"></i>Subforums</a></li>
+						<li><a href="#"><i class="fa fa-user-o" aria-hidden="true"></i>Edit profile</a></li>
+						<li><a href="/WebProjekat/SignoutServlet"><i class="fa fa-sign-out" aria-hidden="true"></i>Sign out</a></li>
+					</ul>
+				</span>
 			</div>
 		</header>
 		<!--endregion-->

@@ -12,6 +12,8 @@ public class Subforum {
 	public ArrayList<String> rules;
 	
 	@JsonIgnore
+	public ArrayList<Topic> topics;
+	@JsonIgnore
 	public User responsibleModerator;
 	@JsonIgnore
 	public ArrayList<User> moderators;

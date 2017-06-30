@@ -38,8 +38,6 @@ public class LoginServlet extends HttpServlet {
 		} else {
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}
-		
-		return;
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -85,7 +83,6 @@ public class LoginServlet extends HttpServlet {
 		servletContext.setAttribute("RedirectedFrom", "LOGIN");
 
 		request.getRequestDispatcher("account.jsp").forward(request, response);
-		return;
 	}
 
 	private String validateData(String username, String password) {

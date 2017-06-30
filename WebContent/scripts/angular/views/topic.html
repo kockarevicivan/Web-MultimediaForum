@@ -1,5 +1,9 @@
 <!--region GrayTrack-->
-<div class="grayTrack jumbojet"></div>
+<div class="grayTrack jumbojet">
+	<div class="centerHelper padding20 boxSizing">
+		<a class="active blocked" href="javascript:;"><i class="fa fa-list-ul" aria-hidden="true"></i> {{ data.topicName }}</a>
+	</div>
+</div>
 <!--endregion-->
 
 <!--region Main-->
@@ -7,7 +11,7 @@
 	
 	<main style="display: inline-block;" >
 		<div class="topicHeaderWrapper">
-			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPy_ad7TAx5crjifhMXj9W6CR-R7VJdIHz2qz2NG6lCo0CW95fmQ" />
+			<img ng-src="{{ data.subforum.iconPath }}" />
 			<div>
 				<h3><a href="#">Subforum</a> - {{ data.topicName }}</h3>
 				<p>{{ data.topicContent }}</p>

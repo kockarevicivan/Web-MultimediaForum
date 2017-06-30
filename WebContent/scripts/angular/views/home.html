@@ -19,8 +19,8 @@
 				<span><i>{{ subforum.description }}</i></span>
 			</div>
 			
-			<a class="eye verticalCenter" ng-href="'www.facebook.com'"><i title="Open" class="fa fa-eye" aria-hidden="true"></i></a>
-			<a class="times verticalCenter" ng-href="'www.facebook.com'"><i title="Unfollow" class="fa fa-times" aria-hidden="true" ng-click="unfollowSubforum(subforum.id)"></i></a>
+			<a class="eye verticalCenter" ng-href="LoginServlet#/subforum/{{ subforum.id }}"><i title="Open" class="fa fa-eye" aria-hidden="true"></i></a>
+			<a class="times verticalCenter"><i title="Unfollow" class="fa fa-times" aria-hidden="true" ng-click="unfollowSubforum(subforum.id)"></i></a>
 			
 		</article>
 	</main>
@@ -34,7 +34,7 @@
 			</div>
 			
 			<a class="eye verticalCenter" ng-href="LoginServlet#/topic/{{ topic.id }}"><i title="Open" class="fa fa-eye" aria-hidden="true"></i></a>
-			<a class="times verticalCenter" href="javascript:;"><i title="Unsave" class="fa fa-times" aria-hidden="true" ng-click="unsaveTopic(topic.id)"></i></a>
+			<a class="times verticalCenter"><i title="Unsave" class="fa fa-times" aria-hidden="true" ng-click="unsaveTopic(topic.id)"></i></a>
 			
 		</article>
 	</main>
@@ -47,8 +47,8 @@
 				<span><i>{{ comment.author.username }} - {{ comment.dateCreated | date}}</i></span>
 			</div>
 			
-			<a class="eye verticalCenter" ng-href="'www.facebook.com'"><i title="Open" class="fa fa-eye" aria-hidden="true"></i></a>
-			<a class="times verticalCenter" ng-href="'www.facebook.com'"><i title="Unsave" class="fa fa-times" aria-hidden="true" ng-click="unsaveComment(comment.id)"></i></a>
+			<a class="eye verticalCenter" ng-href="LoginServlet#/topic/{{ comment.topic.id }}"><i title="Open" class="fa fa-eye" aria-hidden="true"></i></a>
+			<a class="times verticalCenter"><i title="Unsave" class="fa fa-times" aria-hidden="true" ng-click="unsaveComment(comment.id)"></i></a>
 			
 		</article>
 	</main>
@@ -62,7 +62,7 @@
 			</div>
 			
 			<a class="eye verticalCenter" ng-href="'www.facebook.com'"><i title="Open" class="fa fa-eye" aria-hidden="true"></i></a>
-			<a class="times verticalCenter" ng-href="'www.facebook.com'"><i title="Unsave" class="fa fa-times" aria-hidden="true" ng-click="deleteMessage(message.id)"></i></a>
+			<a class="times verticalCenter"><i title="Unsave" class="fa fa-times" aria-hidden="true" ng-click="deleteMessage(message.id)"></i></a>
 			
 			<div class="seenIndicator" ng-if="message.isSeen == false"></div>
 		</article>

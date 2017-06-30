@@ -10,6 +10,14 @@ app.config(function ($routeProvider) {
       controller: "TopicController",
       templateUrl: "/WebProjekat/scripts/angular/views/topic.html"
     })
+    .when('/subforum/:subforumId', {
+      controller: "SubforumController",
+      templateUrl: "/WebProjekat/scripts/angular/views/subforum.html"
+    })
+    .when('/subforums', {
+      controller: "SubforumController",
+      templateUrl: "/WebProjekat/scripts/angular/views/allSubforums.html"
+    })
     .otherwise({
       redirectTo: '/'
     });

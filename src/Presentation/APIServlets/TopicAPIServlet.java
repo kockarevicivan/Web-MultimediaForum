@@ -31,7 +31,6 @@ public class TopicAPIServlet extends HttpServlet {
 		Topic found = null;
 		
 		for(Topic t : db.topics) {
-			String pickaLepaMaterina = t.id;
 			
 			if(t.id.equals(topicId)) {
 				found = t;

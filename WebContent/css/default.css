@@ -12,6 +12,7 @@ body {
 header {
 	height: 60px;
 	background-color: #38393B;
+	overflow: initial !important;
 }
 
 header>.centerHelper>.headerLogo {
@@ -71,6 +72,58 @@ header>.centerHelper>.headerMenu>i {
 	color: #fff;
 }
 
+header>.centerHelper>.headerMenu>ul {
+	position: absolute;
+	display: none;
+	top: 60px;
+	right: 0;
+	background-color: #fefefe;
+	padding: 0 10px;
+	list-style-type: none;
+	min-width: 180px;
+	z-index: 3;
+	border: 1px solid #ECF0F1;
+}
+
+header>.centerHelper>.headerMenu:hover>ul{
+	display: block;
+}
+
+header>.centerHelper>.headerMenu>ul>li {
+	position: relative;
+	height: 50px;
+}
+
+header>.centerHelper>.headerMenu>ul>li:after {	
+	position: absolute;
+	content: '';
+	right: -10px;
+	top: 0;
+	bottom: 0;
+	left: auto;
+	width: 3px;
+}
+
+header>.centerHelper>.headerMenu>ul>li:hover:after {
+	background: #1BBC9B;
+}
+
+header>.centerHelper>.headerMenu>ul>li>a {
+	display: block;
+	height: 50px;
+	line-height: 50px;
+	font-size: 13px;
+	padding: 0 5px;
+}
+
+header>.centerHelper>.headerMenu>ul>li>a>i {
+	width: 24px;
+}
+
+header>.centerHelper>.headerMenu>ul>li:not(:last-child)>a{
+	border-bottom: 1px solid #ECF0F1;
+}
+
 .grayTrack {
 	height: 40px;
 	background-color: #ECF0F1;
@@ -92,6 +145,10 @@ header>.centerHelper>.headerMenu>i {
 
 .grayTrack>.centerHelper>a.active {
 	background-color: #fff;
+}
+
+.grayTrack>.centerHelper>a.blocked {
+	pointer-events: none;
 }
 
 .grayTrack>.centerHelper>a.active:before {
@@ -191,30 +248,16 @@ aside>.notificationWrapper>.notificationItem {
 	height: 60px;
 	line-height: 60px;
 	background-color: #ECF0F1;
+    overflow: hidden;
 }
 
-aside
->
-.notificationWrapper
->
-.notificationItem
-:not
- 
-(
-:last-child
- 
-){
-margin-bottom
-:
- 
-10
-px
-;
-
-
+aside>.notificationWrapper>.notificationItem:not(:last-child) {
+	margin-bottom: 10px;
 }
+
 aside>.notificationWrapper>.notificationItem>i {
 	color: #48a5e2;
+	margin-right: 10px;
 }
 
 aside>.suggestionsWrapper {
@@ -346,13 +389,13 @@ input[type="text"], input[type="password"] {
 	cursor: pointer;
 }
 
-.comment > .commentContent{
+.comment>.commentContent {
 	background: #ECF0F1;
 	margin-bottom: 10px;
 	padding: 20px;
 }
 
-.comment > .commentContent > img{
+.comment>.commentContent>img {
 	display: inline-block;
 	width: 60px;
 	height: 60px;
@@ -360,23 +403,15 @@ input[type="text"], input[type="password"] {
 	margin-right: 20px;
 }
 
-.comment > .commentContent > div{
+.comment>.commentContent>div {
 	display: inline-block;
 	width: calc(100% - 90px);
 }
 
-.comment > .commentContent > .commentInputWrapper {
+.comment>.commentContent>.commentInputWrapper {
 	display: none;
 }
 
-.subcommentsWrapper{
+.subcommentsWrapper {
 	margin-left: 30px;
 }
-
-
-
-
-
-
-
-
