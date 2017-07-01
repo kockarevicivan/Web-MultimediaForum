@@ -15,10 +15,11 @@
 				<h3>Message from <i> #{{ data.message.sender.username }}</i></h3>
 				<p>{{ data.message.content }}</p>
 				
-				<div class="commentInputWrapper">
-					<textarea class="boxSizing" type="text" placeholder="Send a message to {{ data.message.sender.username }}..." ></textarea>
+				<form class="commentInputWrapper" ng-submit="submitNewMessage()">
+					<input id="recipientIdHidden" ng-model="form.recipientId" type="hidden" ng-value="data.message.sender.id" value="data" />
+					<textarea ng-model="form.message" class="boxSizing" type="text" placeholder="Send a message to {{ data.message.sender.username }}..." ></textarea>
 					<button><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-				</div>
+				</form>
 			</div>
 		</div>		
 	</main>

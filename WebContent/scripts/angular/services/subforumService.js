@@ -22,7 +22,3 @@ app.factory('subforumService', [ '$http', function($http) {
 		});
 	}
 } ]);
-
-function sanitize(raw) {
-	return raw.replace("-", "%20");
-}

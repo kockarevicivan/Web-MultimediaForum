@@ -22,6 +22,8 @@
 		<script src="scripts/angular/angular-route.min.js"></script>
 		<script src="scripts/angular/angular-mocks.js"></script>
 		<script src="scripts/angular/app.js"></script>
+		
+		<script src="scripts/functions.js"></script>
 
 		<script src="scripts/angular/services/homeService.js"></script>
 		<script src="scripts/angular/services/topicService.js"></script>

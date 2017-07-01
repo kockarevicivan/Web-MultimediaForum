@@ -13,7 +13,3 @@ app.factory('topicService', [ '$http', function($http) {
 		});
 	}
 } ]);
-
-function sanitize(raw) {
-	return raw.replace("-", "%20");
-}
