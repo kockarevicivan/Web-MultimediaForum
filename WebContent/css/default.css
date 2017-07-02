@@ -85,7 +85,7 @@ header>.centerHelper>.headerMenu>ul {
 	border: 1px solid #ECF0F1;
 }
 
-header>.centerHelper>.headerMenu:hover>ul{
+header>.centerHelper>.headerMenu:hover>ul {
 	display: block;
 }
 
@@ -94,7 +94,7 @@ header>.centerHelper>.headerMenu>ul>li {
 	height: 50px;
 }
 
-header>.centerHelper>.headerMenu>ul>li:after {	
+header>.centerHelper>.headerMenu>ul>li:after {
 	position: absolute;
 	content: '';
 	right: -10px;
@@ -120,7 +120,7 @@ header>.centerHelper>.headerMenu>ul>li>a>i {
 	width: 24px;
 }
 
-header>.centerHelper>.headerMenu>ul>li:not(:last-child)>a{
+header>.centerHelper>.headerMenu>ul>li:not (:last-child )>a {
 	border-bottom: 1px solid #ECF0F1;
 }
 
@@ -251,10 +251,10 @@ aside>.notificationWrapper>.notificationItem {
 	height: 60px;
 	line-height: 60px;
 	background-color: #ECF0F1;
-    overflow: hidden;
+	overflow: hidden;
 }
 
-aside>.notificationWrapper>.notificationItem:not(:last-child) {
+aside>.notificationWrapper>.notificationItem:not(:last-child ) {
 	margin-bottom: 10px;
 }
 
@@ -313,6 +313,13 @@ input[type="text"], input[type="password"] {
 	min-width: 80px;
 }
 
+a.btn{
+	display: inline-block;
+	text-align: center;
+	line-height: 40px;
+	text-decoration: none;
+}
+
 .btn.green {
 	background-color: #1BBC9B;
 	border-color: #1BBC9B;
@@ -328,12 +335,36 @@ input[type="text"], input[type="password"] {
 	background-color: #48a5e2;
 }
 
-.topicHeaderWrapper,
-.messageWrapper {
+.topicHeaderWrapper, .messageWrapper {
 	display: block;
 	background: #ECF0F1;
 	padding: 20px;
 	margin-bottom: 20px;
+}
+
+.topicHeaderWrapper {
+	position: relative;
+}
+
+.likeDislikeWrapper{
+	position: absolute;
+	width: initial!important;
+}
+
+.likeDislikeWrapper>i {
+	font-size: 22px;
+	margin-left: 10px;
+	cursor: pointer;
+	color: #595959;
+}
+
+.topicHeaderWrapper>.likeDislikeWrapper {
+	top: 20px;
+	right: 20px;
+}
+
+.topicHeaderWrapper>.likeDislikeWrapper>i.active {
+	color: #48a5e2;
 }
 
 .topicHeaderWrapper>img {
@@ -380,17 +411,27 @@ input[type="text"], input[type="password"] {
 	padding: 0 46px 0 10px;
 }
 
-.commentInputWrapper>button {
+.commentInputWrapper>button,
+.commentInputWrapper>a {
+	display: block;
 	position: absolute;
 	top: 0;
 	bottom: 0;
 	left: auto;
 	right: 0;
 	height: 36px;
+	line-height: 36px;
 	width: 36px;
 	border: none;
 	border-left: 1px solid #d3dcde;
 	cursor: pointer;
+	text-align: center;
+	background-color: rgba(207, 207, 207, 0.8);'
+}
+
+.commentInputWrapper>a>i{
+	height: 36px;
+	line-height: 36px;
 }
 
 .comment>.commentContent {
@@ -420,100 +461,99 @@ input[type="text"], input[type="password"] {
 	margin-left: 30px;
 }
 
-.messageWrapper h3{
+.messageWrapper h3 {
 	margin-bottom: 10px;
 }
 
-.composeWrapper{
+.composeWrapper {
 	height: 40px;
-    border-bottom: 1px solid #ECF0F1;
-    margin-bottom: 10px;
+	border-bottom: 1px solid #ECF0F1;
+	margin-bottom: 10px;
 }
 
-.composeWrapper>a{
+.composeWrapper>a {
 	height: 40px;
-    line-height: 40px;
-    text-decoration: none;
+	line-height: 40px;
+	text-decoration: none;
 }
 
-.composeWrapper>a>i{
+.composeWrapper>a>i {
 	margin-right: 7px;
-    color: #1BBC9B;
+	color: #1BBC9B;
 }
 
 /*#region [Forms]*/
-
-.styledForm{
+.styledForm {
 	background-color: #ECF0F1;
-    padding: 20px;
+	padding: 20px;
 }
 
-.styledForm > h3{
+.styledForm>h3 {
 	margin-bottom: 10px;
 }
 
-.formComponentRow{
+.formComponentRow {
 	display: block;
 	width: 100%;
 	overflow: hidden;
 	margin-bottom: 10px;
 }
 
-.formComponentRow.hidden{
+.formComponentRow.hidden {
 	display: none;
 }
 
-.formComponent{
-	-moz-box-sizing: border-box; 
-    -webkit-box-sizing: border-box; 
+.formComponent {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
-.formComponent.full{
+.formComponent.full {
 	display: block;
 	width: 100%;
 }
 
-.formComponent.half{
+.formComponent.half {
 	display: inline-block;
 	width: calc(50% - 5px);
 }
 
-.formComponent.left{
+.formComponent.left {
 	float: left;
 }
 
-.formComponent.right{
+.formComponent.right {
 	float: right;
 }
 
-select.formComponent{
-    height: 36px;
-    line-height: 36px;
-    padding: 0 10px;
-    border: 1px solid #d3dcde;
+select.formComponent {
+	height: 36px;
+	line-height: 36px;
+	padding: 0 10px;
+	border: 1px solid #d3dcde;
+	cursor: pointer;
 }
 
-input[type="text"].formComponent,
-input[type="password"].formComponent{
-    height: 36px;
-    line-height: 36px;
-    padding: 0 10px;
-    border: 1px solid #d3dcde;
+input[type="text"].formComponent, input[type="password"].formComponent {
+	height: 36px;
+	line-height: 36px;
+	padding: 0 10px;
+	border: 1px solid #d3dcde;
 }
 
-textarea.formComponent{
+textarea.formComponent {
 	min-height: 90px;
-	width: 100%!important;
-    padding: 10px;
-    border: 1px solid #d3dcde;
+	width: 100% !important;
+	padding: 10px;
+	border: 1px solid #d3dcde;
 }
 
-input[type="file"].formComponent{
+input[type="file"].formComponent {
 	display: none;
 }
 
-.imageLabel.formComponent{
+.imageLabel.formComponent {
 	display: block;
 	width: 100px;
 	height: 100px;
@@ -526,17 +566,32 @@ input[type="file"].formComponent{
 }
 /*#endregion [Forms]*/
 
+.mainItem select.formComponent{
+	position: relative;
+	vertical-align: top;
+	float: right;
+	margin-right: 20px;
+}
 
+.rule{
+	display: inline-block;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+	border-radius: 3px;
+	background-color: #fff;
+	border: 1px solid #d3dcde;
+	font-size: 14px;
+	padding: 0 10px;
+	color: #d3dcde!important;
+}
 
-
-
-
-
-
-
-
-
-
+.rule > i{
+	font-size: 12px;
+	color: #d3dcde!important;
+	cursor: pointer;
+	margin-left: 10px;
+}
 
 
 

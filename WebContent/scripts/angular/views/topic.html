@@ -10,7 +10,12 @@
 <div class="centerHelper padding20 boxSizing">
 	
 	<main style="display: inline-block;" >
+	
 		<div class="topicHeaderWrapper">
+			<div class="likeDislikeWrapper">
+				<i class="active fa fa-thumbs-up" aria-hidden="true"></i>
+				<i class="fa fa-thumbs-down" aria-hidden="true"></i>
+			</div>
 			<img ng-src="{{ data.subforum.iconPath }}" />
 			<div>
 				<h3><a href="#">Subforum</a> - {{ data.topicName }}</h3>
@@ -24,8 +29,8 @@
 			</div>
 		</div>
 		
-		<comment ng-repeat="comment in data.comments" comment="comment"></comment>
-		
+		<div ng-repeat="comment in data.comments" class="comment" ng-include src="'/WebProjekat/scripts/angular/views/components/comment.html'" onload="commentModel = comment"></div>
+
 	</main>
 	
 	<div ng-include src="'/WebProjekat/scripts/angular/views/components/sidebar.html'"></div>

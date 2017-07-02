@@ -14,4 +14,6 @@ public class HomeServiceResponseModel implements Serializable {
 	public ArrayList<Topic> savedTopics;
 	public ArrayList<Comment> savedComments;
 	public ArrayList<Message> messages;
+	
+	public ArrayList<Topic> topicsFromLikedForums;
 }

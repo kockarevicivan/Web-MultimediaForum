@@ -1,11 +1,19 @@
 package Domain.Entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-public class Topic {
+public class Topic implements Serializable {
+
+	public Topic() {
+		comments = new ArrayList<Comment>();
+		userLikes = new ArrayList<User>();
+		userDislikes = new ArrayList<User>();
+	}
+
 	public String id;
 	public Subforum subforum;
 	public String name;
@@ -16,7 +24,7 @@ public class Topic {
 	public String linkUrl;
 	public String linkContent;
 	public Date dateCreated;
-	
+
 	@JsonIgnore
 	public ArrayList<Comment> comments;
 	@JsonIgnore

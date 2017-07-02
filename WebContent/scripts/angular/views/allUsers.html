@@ -1,0 +1,28 @@
+<!--region GrayTrack-->
+<div class="grayTrack jumbojet">
+	<div class="centerHelper padding20 boxSizing">
+		<a class="active blocked" href="javascript:;"><i class="fa fa-list-ul" aria-hidden="true"></i> All users</a>
+	</div>
+</div>
+<!--endregion-->
+
+<!--region Main-->
+<div class="centerHelper padding20 boxSizing">
+	<main style="display: inline-block;" >
+		<article class="mainItem jumbojet boxSizing" ng-repeat="user in allUsers.users" >
+			<img class="verticalCenter" src="images/avatar.jpg"/>
+			<div class="forumInfoWrapper verticalCenter">
+				<a href="javascript:;">{{ user.username }}</a>
+				<span><i>{{ user.email }}</i></span>
+			</div>
+			
+			<select class="verticalCenter formComponent" ng-if="currentUser.role > 1" ng-model="user.role" ng-change="changeRole(user)">
+				<option ng-repeat="role in roles" ng-selected="role.id == user.role" value="{{ role.id }}">{{ role.name }}</option>
+			</select>
+			
+		</article>
+	</main>
+	
+	<div ng-include src="'/WebProjekat/scripts/angular/views/components/sidebar.html'"></div>
+</div>
+<!--endregion-->

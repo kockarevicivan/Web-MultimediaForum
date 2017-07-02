@@ -1,8 +1,8 @@
 package Domain.Entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.io.Serializable;
 
-public class Message {
+public class Message implements Serializable {
 	public String id;
 	public String content;
 	public boolean isSeen;

@@ -1,23 +1,24 @@
 package Domain.Entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.UUID;
 
 import Commons.Security.SecurityHelper;
 
-public class Database {
+public class Database implements Serializable {
 	private static Database instance;
-	
+
 	public ArrayList<User> users;
 	public ArrayList<Subforum> subforums;
 	public ArrayList<Topic> topics;
-	
+
 	private Database() {
 		users = new ArrayList<User>();
 		subforums = new ArrayList<Subforum>();
 		topics = new ArrayList<Topic>();
-		
+
 		User temp = new User();
 		temp.id = UUID.randomUUID().toString();
 		temp.email = "squarepantsivan@gmail.com";
@@ -32,7 +33,7 @@ public class Database {
 		temp.likedTopics = new ArrayList<Topic>();
 		temp.dislikedTopics = new ArrayList<Topic>();
 		temp.role = 2;
-		
+
 		Subforum sf = new Subforum();
 		sf.id = UUID.randomUUID().toString();
 		sf.name = "Super duper owl forum";
@@ -46,7 +47,7 @@ public class Database {
 		sf.topics = new ArrayList<Topic>();
 		temp.followedSubforums = new ArrayList<Subforum>();
 		temp.followedSubforums.add(sf);
-		
+
 		Topic t = new Topic();
 		t.id = UUID.randomUUID().toString();
 		t.author = temp;
@@ -76,11 +77,26 @@ public class Database {
 		c.topic = t;
 		c.userDislikes = new ArrayList<User>();
 		c.userLikes = new ArrayList<User>();
+		t.comments.add(c);
+
+		Comment c1 = new Comment();
+		c1.id = UUID.randomUUID().toString();
+		c1.author = temp;
+		c1.comments = new ArrayList<>();
+		c1.content = "Get the F of my yard!";
+		c1.dateCreated = new Date();
+		c1.isChanged = false;
+		c1.parentComment = null;
+		c1.topic = t;
+		c1.userDislikes = new ArrayList<User>();
+		c1.userLikes = new ArrayList<User>();
+		t.comments.add(c);
+
 		temp.savedComments = new ArrayList<Comment>();
 		temp.savedComments.add(c);
 		temp.likedComments.add(c);
 		temp.dislikedComments.add(c);
-		
+
 		Message msg = new Message();
 		msg.id = UUID.randomUUID().toString();
 		msg.sender = temp;
@@ -89,7 +105,7 @@ public class Database {
 		msg.isSeen = false;
 		temp.messages = new ArrayList<Message>();
 		temp.messages.add(msg);
-		
+
 		msg = new Message();
 		msg.id = UUID.randomUUID().toString();
 		msg.sender = temp;
@@ -97,7 +113,7 @@ public class Database {
 		msg.content = "Jos neka jebo te!";
 		msg.isSeen = true;
 		temp.messages.add(msg);
-		
+
 		msg = new Message();
 		msg.id = UUID.randomUUID().toString();
 		msg.sender = temp;
@@ -105,15 +121,15 @@ public class Database {
 		msg.content = "I jos jedna!";
 		msg.isSeen = true;
 		temp.messages.add(msg);
-		
+
 		subforums.add(sf);
 		users.add(temp);
 	}
-	
+
 	public static Database getInstance() {
-		if(instance == null)
+		if (instance == null)
 			instance = new Database();
-		
+
 		return instance;
 	}
 }

@@ -1,4 +1,4 @@
-app.controller('HomeController', function($scope, $route, $routeParams, homeService) {
+app.controller('HomeController', function($scope, $rootScope, $route, $routeParams, homeService) {
 
 	homeService.getHomeData().success(function(data){
 		$scope.data = data;

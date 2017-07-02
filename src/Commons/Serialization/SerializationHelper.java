@@ -1,6 +1,8 @@
 package Commons.Serialization;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.Serializable;
 
 import com.fasterxml.jackson.databind.ObjectMapper;

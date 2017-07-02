@@ -2,8 +2,8 @@
 	<div class="commentContent">
 		<img src="images/commentIcon.png" />
 		<div>
-			<h4>kotzkaloney wrote:</h4>
-			<p>Neki sadrzaj komentara</p>
+			<h4>#{{ commentModel.author.username }} wrote:</h4>
+			<p>{{ commentModel.content }}</p>
 			<div class="commentInputWrapper">
 				<textarea class="boxSizing" type="text" placeholder="Write a comment..." ></textarea>
 				<button><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
@@ -11,6 +11,6 @@
 		</div>
 	</div>
 	<div class="subcommentsWrapper">
-		
+		<div ng-repeat="subcomment in commentModel.comments" class="comment" ng-include src="'/WebProjekat/scripts/angular/views/components/comment.html'" onload="commentModel = subcomment"></div>
 	</div>
 </div>

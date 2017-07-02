@@ -44,6 +44,16 @@ var app = angular.module('webForumApp', ['ngRoute'], function($httpProvider){
 	  }];
 });
 
+app.run(function($rootScope, $http) {
+	$http.get('/WebProjekat/CurrentUserAPIServlet').success(function(data) {
+		$rootScope.currentUser =  data;
+	}).error(function(err) {
+		return err;
+	});
+	
+	console.log($rootScope.currentUser);
+});
+
 app.config(function ($routeProvider) {
   $routeProvider
     .when('/', {
@@ -77,6 +87,18 @@ app.config(function ($routeProvider) {
     .when('/editProfile', {
       controller: "ProfileController",
       templateUrl: "/WebProjekat/scripts/angular/views/editProfile.html"
+    })
+    .when('/searchResults', {
+      controller: "SearchController",
+      templateUrl: "/WebProjekat/scripts/angular/views/searchResults.html"
+    })
+    .when('/users', {
+      controller: "UserController",
+      templateUrl: "/WebProjekat/scripts/angular/views/allUsers.html"
+    })
+    .when('/createSubforum', {
+      controller: "SubforumController",
+      templateUrl: "/WebProjekat/scripts/angular/views/newSubforum.html"
     })
     .otherwise({
       redirectTo: '/'

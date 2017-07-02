@@ -1,7 +1,8 @@
 <!--region GrayTrack-->
 <div class="grayTrack jumbojet">
 	<div class="centerHelper padding20 boxSizing">
-		<a class="active" href="javascript:;" data-main-target="subforumsMain"><i class="fa fa-list-ul" aria-hidden="true"></i> Subforums</a>
+		<a class="active" href="javascript:;" data-main-target="homeMain"><i class="fa fa-floppy-o" aria-hidden="true"></i> Home</a>
+		<a href="javascript:;" data-main-target="subforumsMain"><i class="fa fa-list-ul" aria-hidden="true"></i> Subforums</a>
 		<a href="javascript:;" data-main-target="savedTopicsMain"><i class="fa fa-floppy-o" aria-hidden="true"></i> Saved topics</a>
 		<a href="javascript:;" data-main-target="savedCommentsMain"><i class="fa fa-floppy-o" aria-hidden="true"></i> Saved comments</a>
 		<a href="javascript:;" data-main-target="messagesMain"><i class="fa fa-envelope" aria-hidden="true"></i> Messages</a>
@@ -11,7 +12,21 @@
 
 <!--region Main-->
 <div class="centerHelper padding20 boxSizing">
-	<main class="subforumsMain" style="display: inline-block;" >
+	<main class="homeMain" style="display: inline-block;" >
+		<article class="mainItem jumbojet boxSizing" ng-repeat="subforumTopic in data.savedTopics" >
+			<img class="verticalCenter" ng-src="{{ subforumTopic.subforum.iconPath }}" />
+			<div class="forumInfoWrapper verticalCenter">
+				<a href="javascript:;">{{ subforumTopic.name }}</a>
+				<span><i>{{ subforumTopic.content }}</i></span>
+			</div>
+			
+			<a class="eye verticalCenter" ng-href="LoginServlet#/topic/{{ subforumTopic.id }}"><i title="Open" class="fa fa-eye" aria-hidden="true"></i></a>
+			<a class="times verticalCenter"><i title="Unsave" class="fa fa-times" aria-hidden="true" ng-click="unsaveTopic(subforumTopic.id)"></i></a>
+			
+		</article>
+	</main>
+	
+	<main class="subforumsMain" >
 		<article class="mainItem jumbojet boxSizing" ng-repeat="subforum in data.followedSubforums" >
 			<img class="verticalCenter" ng-src="{{ subforum.iconPath }}"/>
 			<div class="forumInfoWrapper verticalCenter">

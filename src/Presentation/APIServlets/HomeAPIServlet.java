@@ -23,12 +23,12 @@ import Presentation.Viewmodels.HomeServiceResponseModel;
 @SuppressWarnings("serial")
 @WebServlet("/HomeAPIServlet")
 public class HomeAPIServlet extends HttpServlet {
-	
+
 	private Database db;
-	
-    public HomeAPIServlet() {
-        db = Database.getInstance();
-    }
+
+	public HomeAPIServlet() {
+		db = Database.getInstance();
+	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		User current = (User)request.getSession().getAttribute("CurrentUser");
@@ -38,20 +38,16 @@ public class HomeAPIServlet extends HttpServlet {
 		responseModel.savedTopics = current.savedTopics;
 		responseModel.savedComments = current.savedComments;
 		responseModel.messages = current.messages;
+		responseModel.topicsFromLikedForums = new ArrayList<Topic>();
+		
+		for(Subforum s : current.followedSubforums) {
+			for(Topic t : s.topics) {
+				responseModel.topicsFromLikedForums.add(t);
+			}
+		}
 		
 		String jsonContent = new SerializationHelper<HomeServiceResponseModel>().serialize(responseModel);
-		
+
 		response.getWriter().write(jsonContent);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
