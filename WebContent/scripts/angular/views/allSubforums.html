@@ -1,0 +1,27 @@
+<!--region GrayTrack-->
+<div class="grayTrack jumbojet">
+	<div class="centerHelper padding20 boxSizing">
+		<a class="active blocked" href="javascript:;"><i class="fa fa-list-ul" aria-hidden="true"></i> All subforums</a>
+	</div>
+</div>
+<!--endregion-->
+
+<!--region Main-->
+<div class="centerHelper padding20 boxSizing">
+	<main style="display: inline-block;" >
+		<article class="mainItem jumbojet boxSizing" ng-repeat="subforum in allSubforums.subforums" >
+			<img class="verticalCenter" ng-src="{{ subforum.iconPath }}"/>
+			<div class="forumInfoWrapper verticalCenter">
+				<a href="javascript:;">{{ subforum.name }}</a>
+				<span><i>{{ subforum.description }}</i></span>
+			</div>
+			
+			<a class="eye verticalCenter" ng-href="LoginServlet#/subforum/{{ subforum.id }}"><i title="Open" class="fa fa-eye" aria-hidden="true"></i></a>
+			<a class="times verticalCenter"><i title="Unfollow" class="fa fa-times" aria-hidden="true" ng-click="unfollowSubforum(subforum.id)"></i></a>
+			
+		</article>
+	</main>
+	
+	<div ng-include src="'/WebProjekat/scripts/angular/views/components/sidebar.html'"></div>
+</div>
+<!--endregion-->

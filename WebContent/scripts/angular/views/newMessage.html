@@ -1,0 +1,34 @@
+<!--region GrayTrack-->
+<div class="grayTrack jumbojet">
+	<div class="centerHelper padding20 boxSizing">
+		<a class="active blocked" href="javascript:;"><i class="fa fa-list-ul" aria-hidden="true"></i>New message</a>
+	</div>
+</div>
+<!--endregion-->
+
+<!--region Main-->
+<div class="centerHelper padding20 boxSizing">
+	
+	<main style="display: inline-block;" >
+		<div class="messageWrapper">
+			<form ng-submit="submitNewMessage()">
+				<h3>Compose a new message</h3>
+				
+				<div class="formComponentRow">
+					<select ng-model="form.recipientId" class="formComponent full">
+						<option value="">Recipient...</option>
+						<option value="{{ user.id }}" ng-repeat="user in users.users">#{{ user.username }}</option>
+					</select>
+				</div>
+				
+				<div class="commentInputWrapper">
+					<textarea ng-model="form.message" class="boxSizing" type="text" placeholder="Compose a new message..." ></textarea>
+					<button><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+				</div>
+			</form>
+		</div>		
+	</main>
+	
+	<div ng-include src="'/WebProjekat/scripts/angular/views/components/sidebar.html'"></div>
+</div>
+<!--endregion-->

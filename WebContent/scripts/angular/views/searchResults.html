@@ -1,0 +1,57 @@
+<!--region GrayTrack-->
+<div class="grayTrack jumbojet">
+	<div class="centerHelper padding20 boxSizing">
+		<a class="active" href="javascript:;" data-main-target="foundSubforumsMain"><i class="fa fa-list-ul" aria-hidden="true"></i> Found subforums</a>
+		<a href="javascript:;" data-main-target="foundTopicsMain"><i class="fa fa-floppy-o" aria-hidden="true"></i> Found topics</a>
+		<a href="javascript:;" data-main-target="foundUsersMain"><i class="fa fa-floppy-o" aria-hidden="true"></i> Found users</a>
+	</div>
+</div>
+<!--endregion-->
+
+<!--region Main-->
+<div class="centerHelper padding20 boxSizing">
+	<main class="foundSubforumsMain" style="display: inline-block;" >
+		<article class="mainItem jumbojet boxSizing" ng-repeat="subforum in searchData.subforums" >
+			<img class="verticalCenter" ng-src="{{ subforum.iconPath }}"/>
+			<div class="forumInfoWrapper verticalCenter">
+				<a href="javascript:;">{{ subforum.name }}</a>
+				<span><i>{{ subforum.description }}</i></span>
+			</div>
+			
+			<a class="eye verticalCenter" ng-href="LoginServlet#/subforum/{{ subforum.id }}"><i title="Open" class="fa fa-eye" aria-hidden="true"></i></a>
+			<a class="times verticalCenter"><i title="Unfollow" class="fa fa-times" aria-hidden="true" ng-click="unfollowSubforum(subforum.id)"></i></a>
+			
+		</article>
+	</main>
+	
+	<main class="foundTopicsMain" >
+		<article class="mainItem jumbojet boxSizing" ng-repeat="topic in searchData.topics" >
+			<img class="verticalCenter" ng-src="{{ topic.subforum.iconPath }}" />
+			<div class="forumInfoWrapper verticalCenter">
+				<a href="javascript:;">{{ topic.name }}</a>
+				<span><i>{{ topic.content }}</i></span>
+			</div>
+			
+			<a class="eye verticalCenter" ng-href="LoginServlet#/topic/{{ topic.id }}"><i title="Open" class="fa fa-eye" aria-hidden="true"></i></a>
+			<a class="times verticalCenter"><i title="Unsave" class="fa fa-times" aria-hidden="true" ng-click="unsaveTopic(topic.id)"></i></a>
+			
+		</article>
+	</main>
+	
+	<main class="foundUsersMain" >
+		<article class="mainItem jumbojet boxSizing" ng-repeat="comment in data.savedComments" >
+			<img class="verticalCenter" src="images/commentIcon.png"/>
+			<div class="forumInfoWrapper verticalCenter">
+				<a href="javascript:;">{{ comment.content }}</a>
+				<span><i>{{ comment.author.username }} - {{ comment.dateCreated | date}}</i></span>
+			</div>
+			
+			<a class="eye verticalCenter" ng-href="LoginServlet#/topic/{{ comment.topic.id }}"><i title="Open" class="fa fa-eye" aria-hidden="true"></i></a>
+			<a class="times verticalCenter"><i title="Unsave" class="fa fa-times" aria-hidden="true" ng-click="unsaveComment(comment.id)"></i></a>
+			
+		</article>
+	</main>
+	
+	<div ng-include src="'/WebProjekat/scripts/angular/views/components/sidebar.html'"></div>
+</div>
+<!--endregion-->

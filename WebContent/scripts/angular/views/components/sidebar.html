@@ -1,0 +1,17 @@
+<aside ng-controller="SidebarController">
+	<div class="suggestionsWrapper boxSizing">
+		<h4>Recommended for you:</h4>
+		<div class="suggestionsItem" ng-repeat="topic in data.recommendedTopics">
+			<img class="verticalCenter" ng-src="{{ topic.subforum.iconPath }}" />
+			<a ng-href="LoginServlet#/topic/{{ topic.id }}">{{ topic.name }}</a>
+		</div>
+	</div>
+	
+	<div class="notificationWrapper">
+		<a href="javascript:;" title="{{ interaction.entityName }}" class="notificationItem boxSizing padding20" ng-repeat="interaction in data.likesDislikes">
+			<i ng-if="interaction.isLike == true" class="fa fa-thumbs-up" aria-hidden="true"></i>
+			<i ng-if="interaction.isLike == false" class="fa fa-thumbs-down" aria-hidden="true"></i>
+			{{ interaction.entityName }}
+		</a>
+	</div>
+</aside>

@@ -1,0 +1,38 @@
+<!--region GrayTrack-->
+<div class="grayTrack jumbojet">
+	<div class="centerHelper padding20 boxSizing">
+		<a class="active blocked" href="javascript:;"><i class="fa fa-list-ul" aria-hidden="true"></i> {{ data.topicName }}</a>
+	</div>
+</div>
+<!--endregion-->
+
+<!--region Main-->
+<div class="centerHelper padding20 boxSizing">
+	
+	<main style="display: inline-block;" >
+	
+		<div class="topicHeaderWrapper">
+			<div class="likeDislikeWrapper">
+				<i class="active fa fa-thumbs-up" aria-hidden="true"></i>
+				<i class="fa fa-thumbs-down" aria-hidden="true"></i>
+			</div>
+			<img ng-src="{{ data.subforum.iconPath }}" />
+			<div>
+				<h3><a href="#">Subforum</a> - {{ data.topicName }}</h3>
+				<p>{{ data.topicContent }}</p>
+				<h5><i>#{{ data.author }} - {{ data.dateCreated | date }}.</i></h5>
+				
+				<div class="commentInputWrapper">
+					<textarea class="boxSizing" type="text" placeholder="Write a comment..." ></textarea>
+					<button><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+				</div>
+			</div>
+		</div>
+		
+		<div ng-repeat="comment in data.comments" class="comment" ng-include src="'/WebProjekat/scripts/angular/views/components/comment.html'" onload="commentModel = comment"></div>
+
+	</main>
+	
+	<div ng-include src="'/WebProjekat/scripts/angular/views/components/sidebar.html'"></div>
+</div>
+<!--endregion-->

@@ -1,0 +1,38 @@
+<!--region GrayTrack-->
+<div class="grayTrack jumbojet">
+	<div class="centerHelper padding20 boxSizing">
+		<a class="active blocked" href="javascript:;"><i class="fa fa-list-ul" aria-hidden="true"></i>Edit profile</a>
+	</div>
+</div>
+<!--endregion-->
+
+<!--region Main-->
+<div class="centerHelper padding20 boxSizing">
+	
+	<main style="display: inline-block;" >
+		<form class="styledForm" action="#" ng-controller="ProfileController">
+			<h3>Edit information about yourself</h3>
+			
+			<div class="formComponentRow">
+				<input class="formComponent full" type="text" value="#kotzkaloney" placeholder="Username...*" disabled />
+			</div>
+			<div class="formComponentRow">
+				<input class="formComponent half left" type="text" value="Ivan" placeholder="First name is required...*" />
+				<input class="formComponent half right" type="text" value="Kockarevic" placeholder="Last name is required...*" />
+			</div>
+			<div class="formComponentRow">
+				<input class="formComponent half left" type="text" value="kockarevic.ivan@gmail.com"  placeholder="Email is required...*"/>
+				<input class="formComponent half right" type="text" value="+381 69 452 7008"  placeholder="Telephone number..."/>
+			</div>
+			<div class="formComponentRow">
+				<input class="formComponent half left" type="password" placeholder="Password..." />
+				<input class="formComponent half right" type="password" placeholder="Repeat password..."/>
+			</div>
+
+			<button class="btn green" ngClick="Submit">Submit</button>
+		</form>
+	</main>
+	
+	<div ng-include src="'/WebProjekat/scripts/angular/views/components/sidebar.html'"></div>
+</div>
+<!--endregion-->

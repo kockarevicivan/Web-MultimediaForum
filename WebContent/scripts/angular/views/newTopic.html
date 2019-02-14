@@ -1,0 +1,80 @@
+<!--region GrayTrack-->
+<div class="grayTrack jumbojet">
+	<div class="centerHelper padding20 boxSizing">
+		<a class="active blocked" href="javascript:;"><i class="fa fa-list-ul" aria-hidden="true"></i>Compose a topic</a>
+	</div>
+</div>
+<!--endregion-->
+
+<!--region Main-->
+<div class="centerHelper padding20 boxSizing">
+	
+	<main style="display: inline-block;" >
+		<form class="styledForm" action="#">
+			<h3>Compose a new topic</h3>
+			
+			<div class="formComponentRow">
+				<input class="formComponent full" type="text" placeholder="Topic name...*" />
+			</div>
+			
+			<div class="formComponentRow">
+				<select id="topicTypeSelect" class="formComponent full">
+					<option value="0">Topic type...</option>
+					<option value="1">Text...</option>
+					<option value="2">Image...</option>
+					<option value="3">Link...</option>
+				</select>
+			</div>
+			
+			<div class="formComponentRow hidden" data-topic-type="text">
+				<textarea class="formComponent full" placeholder="Topic text..."></textarea>
+			</div>
+			
+			<div class="formComponentRow hidden" data-topic-type="image">
+				<input id="newTopicImageInput" class="formComponent" type="file" onchange="readURL(this);" />
+				<label id="newTopicImageLabel" style="background-image: url('/WebProjekat/images/addImageDefault.jpg');" class="imageLabel formComponent" for="newTopicImageInput"></label>
+				<script>
+					function readURL(input) {
+						if (input.files && input.files[0]) {
+							var reader = new FileReader();
+							reader.onload = function (e) {
+								$('#newTopicImageLabel').css('background-image', 'url("' + e.target.result + '")');
+							};
+							reader.readAsDataURL(input.files[0]);
+						}
+					}
+				</script>
+			</div>
+
+			<div class="formComponentRow hidden" data-topic-type="link">
+				<input class="formComponent half left" type="text" placeholder="Link content...*" />
+				<input class="formComponent half right" type="text" placeholder="Link reference...*" />
+			</div>
+
+			<button class="btn green" ngClick="Submit">Submit</button>
+		</form>
+	</main>
+	
+	<div ng-include src="'/WebProjekat/scripts/angular/views/components/sidebar.html'"></div>
+</div>
+<!--endregion-->
+
+<script>
+	$(document).ready(function(){
+		$('#topicTypeSelect').on('change', function() {
+			var value = $('#topicTypeSelect').val();
+			
+			$('.formComponentRow.hidden').css('display', 'none');
+			
+			if(value == 1) {
+				$('div[data-topic-type="text"]').css('display', 'block');
+			} else if(value == 2) {
+				$('div[data-topic-type="image"]').css('display', 'block');
+			} else if(value == 3) {
+				$('div[data-topic-type="link"]').css('display', 'block');
+			}
+		});
+	});
+</script>
+
+
