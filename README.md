@@ -1,4 +1,4 @@
-# Web-MultimediaForum
+# web-multimedia-forum
 
 JSP + AngularJS implementation of a multimedia sharing forum, created for learning purposes.
 
